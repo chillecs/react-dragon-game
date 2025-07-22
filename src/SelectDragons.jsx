@@ -149,22 +149,24 @@ export function SelectDragons() {
                 their weakness dragon.
               </p>
               {selectedDragons.length >= 2 && (
-                <div className="flex items-center justify-center">
+                <>
+                  <div className="flex items-center justify-center">
+                    <button
+                      onClick={() => navigate("/fight")}
+                      className="mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                    >
+                      Go to Fight Arena
+                    </button>
+                  </div>
                   <button
-                    onClick={() => navigate("/fight")}
-                    className="mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                    onClick={clearLocalStorage}
+                    className="mt-6 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
                   >
-                    Go to Fight Arena
+                    Clear Selection
                   </button>
-                </div>
+                </>
               )}
             </div>
-            <button
-              onClick={clearLocalStorage}
-              className="absolute left-1/2 -translate-x-1/2 mt-6 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
-            >
-              Clear Selection
-            </button>
           </div>
         </div>
         <DragonModal
