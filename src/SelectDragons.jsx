@@ -84,7 +84,7 @@ export function SelectDragons() {
   const [selectedDragons, setSelectedDragons] = useState([]);
   const [infoMessage, setInfoMessage] = useState(
     "Select 2 Dragons to start the game!"
-  );
+);
 
   const navigate = useNavigate();
 
@@ -142,29 +142,27 @@ export function SelectDragons() {
                 </div>
               ))}
             </div>
-            {/* Clear selection btn and weakness info message */}
+            {/* Clear localstorage btn and weakness info message */}
             <div className="flex items-center justify-center flex-col">
               <p className="text-blue-100 text-center m-4 font-bold">
                 Every Dragon has a weakness. They receive 20% more damage from
                 their weakness dragon.
               </p>
               {selectedDragons.length >= 2 && (
-                <>
-                  <div className="flex items-center justify-center">
-                    <button
-                      onClick={() => navigate("/fight")}
-                      className="mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
-                    >
-                      Go to Fight Arena
-                    </button>
-                  </div>
+                <div className="flex items-center justify-center">
+                  <button
+                    onClick={() => navigate("/fight")}
+                    className="mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                  >
+                    Go to Fight Arena
+                  </button>
                   <button
                     onClick={clearLocalStorage}
-                    className="mt-6 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                    className="absolute bottom-4 mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
                   >
                     Clear Selection
                   </button>
-                </>
+                </div>
               )}
             </div>
           </div>

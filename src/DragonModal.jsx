@@ -55,7 +55,7 @@ export function DragonModal({
               onClick={() => setModal(false)}
               aria-label="Close modal"
             >
-              <span className="text-2xl absolute left-0 right-0 top-0 bottom-0 transition">
+              <span className="text-2xl absolute left-0 right-0 top-0 bottom-0 transition group-hover:-translate-y-1">
                 &times;
               </span>
             </button>
