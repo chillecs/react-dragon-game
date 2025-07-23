@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "server": "json-server-auth --watch db.json -r routes.json -p 3080",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
