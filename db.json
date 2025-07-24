@@ -1,9 +1,18 @@
-{ 
-    "users": [
-        {
-            "id": 1,
-            "email": "p@p.com",
-            "password": "asdasd"
-        }
-    ]
+{
+  "users": [
+    {
+      "email": "p@p.com",
+      "password": "asdasd",
+      "firstName": "P",
+      "lastName": "P",
+      "id": 1
+    },
+    {
+      "email": "awdawd@awdawd.ro",
+      "password": "$2a$10$tKWJ2Cg59HrQGMEs.Sz5QOZ6fBxxQPdR1YC/DF6mr3TSWsRCCneoW",
+      "firstName": "awdd",
+      "lastName": "awddddd",
+      "id": 2
+    }
+  ]
 }

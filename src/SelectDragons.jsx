@@ -110,7 +110,7 @@ export function SelectDragons() {
 
   return (
     <>
-      <div className="min-h-screen w-full bg-[#030712] flex flex-col items-center justify-center p-4">
+      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4">
         {/* Only show the main title if no dragons are selected */}
         {selectedDragons.length === 0 && (
           <h1 className="text-5xl font-extrabold text-center text-blue-100 drop-shadow-lg mb-10 mt-8 tracking-tight">
@@ -152,13 +152,13 @@ export function SelectDragons() {
                 <div className="flex items-center justify-center">
                   <button
                     onClick={() => navigate("/fight")}
-                    className="mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                    className="mt-2 mr-4 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
                   >
                     Go to Fight Arena
                   </button>
                   <button
                     onClick={clearLocalStorage}
-                    className="absolute bottom-4 mt-2 mb-4 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
+                    className="mt-2 mb-4 p-8 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer"
                   >
                     Clear Selection
                   </button>
