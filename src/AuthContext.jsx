@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 export const AuthContext = createContext(null);
 
@@ -10,6 +11,7 @@ const initialContextValue = {
 const storageKey = 'auth';
 
 export function AuthContextProvider({ children }) {
+  const navigate = useNavigate();
   const [auth, setAuth] = useState(() => {
     const fromStorage = localStorage.getItem(storageKey);
 
@@ -28,6 +30,7 @@ export function AuthContextProvider({ children }) {
   function logout() {
     localStorage.removeItem(storageKey);
     setAuth(initialContextValue);
+    navigate("/login");
   }
 
   return (
