@@ -8,10 +8,10 @@
       "id": 1
     },
     {
-      "email": "a@a.com",
-      "password": "$2a$10$1fUHN8J8Wa9D8Az5SIiaaeTD/oFbCZWWAOG4NAGZ9WcgJb76BPfxu",
+      "email": "b@b.com",
+      "password": "$2a$10$LJ4Qz5WtvlE7LmYqzM10AevH/.KC7dXqHHX2TqLs7pUmCD7bId2zm",
       "firstName": "eu",
-      "lastName": "sieu",
+      "lastName": "si eu",
       "id": 2
     }
   ]

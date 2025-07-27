@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { ToastContainer, Bounce, toast } from "react-toastify";
+import { Bounce, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export function DragonModal({
