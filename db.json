@@ -8,18 +8,11 @@
       "id": 1
     },
     {
-      "email": "b@b.com",
-      "password": "$2a$10$LJ4Qz5WtvlE7LmYqzM10AevH/.KC7dXqHHX2TqLs7pUmCD7bId2zm",
-      "firstName": "eu",
-      "lastName": "si eu",
+      "email": "dev@dev.com",
+      "password": "$2a$10$JA3RqGDy3h3etqjS9rZpp.ej05.sL0MMdL9LSvnNzUGFA2H4sFOZa",
+      "firstName": "Cristian",
+      "lastName": "Dev",
       "id": 2
-    },
-    {
-      "email": "gigelu@gigelu.com",
-      "password": "$2a$10$Qjm1vSu5lZ1/h/mbRv6wNObD8BU8nQfc/oUv/GTeZVMM2i/jL6WTG",
-      "firstName": "gigel",
-      "lastName": "gigel",
-      "id": 3
     }
   ]
 }

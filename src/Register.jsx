@@ -110,30 +110,35 @@ export function Register() {
       <div className="flex flex-col gap-6 p-6 rounded-2xl border-2 text-center">
         <h1 className="text-4xl font-bold mb-4">Register</h1>
 
-        <label htmlFor="firstName">First Name</label>
-        <input
-          className="p-2 rounded-md border-2 border-gray-300"
-          type="text"
-          id="firstName"
-          name="firstName"
-          value={formValues.firstName}
-          onChange={handleInputChange}
-        />
-        {errors?.firstName && (
-          <p className="inputError">{errors.firstName[0]}</p>
-        )}
+        <div className="flex gap-6">
+          <div className="flex-1">
+            <label className="block text-center mb-2" htmlFor="firstName">First Name</label>
+            <input
+              className="w-full p-2 rounded-md border-2 border-gray-300"
+              type="text"
+              id="firstName"
+              name="firstName"
+              value={formValues.firstName}
+              onChange={handleInputChange}
+            />
+            {errors?.firstName && (
+              <p className="inputError">{errors.firstName[0]}</p>
+            )}
+          </div>
 
-        <label htmlFor="lastName">Last Name</label>
-        <input
-          className="p-2 rounded-md border-2 border-gray-300"
-          type="text"
-          id="lastName"
-          name="lastName"
-          value={formValues.lastName}
-          onChange={handleInputChange}
-        />
-        {errors?.lastName && <p className="inputError">{errors.lastName[0]}</p>}
-
+          <div className="flex-1">
+            <label className="block text-center mb-2" htmlFor="lastName">Last Name</label>
+            <input
+              className="w-full p-2 rounded-md border-2 border-gray-300"
+              type="text"
+              id="lastName"
+              name="lastName"
+              value={formValues.lastName}
+              onChange={handleInputChange}
+            />
+            {errors?.lastName && <p className="inputError">{errors.lastName[0]}</p>}
+          </div>
+        </div>
         <label htmlFor="email">Email</label>
         <input
           className="p-2 rounded-md border-2 border-gray-300"
