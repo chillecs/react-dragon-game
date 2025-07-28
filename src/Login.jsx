@@ -33,14 +33,7 @@ export function Login() {
   }, [user, navigate]);
 
   function handleInputChange(e) {
-    // const newFormValues = {...formValues};
-    // const inputName = e.target.name;
-    // const inputValue = e.target.value;
-
-    // newFormValues[inputName] = inputValue;
-    // setFormValues(newFormValues);
-
-    const newFormValues = { ...formValues, [e.target.name]: e.target.value };
+    const newFormValues = {...formValues, [e.target.name]: e.target.value};
 
     if (errors) {
       const newErrors = validateForm(newFormValues, validationSchema);
@@ -52,9 +45,6 @@ export function Login() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    // const form = e.target;
-    // const data = new FormData(form);
-    // const dataAsObject = Object.fromEntries(data.entries());
 
     const dataAsObject = { ...formValues };
     const errors = validateForm(dataAsObject, validationSchema);

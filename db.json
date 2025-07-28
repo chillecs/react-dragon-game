@@ -13,6 +13,13 @@
       "firstName": "eu",
       "lastName": "si eu",
       "id": 2
+    },
+    {
+      "email": "gigelu@gigelu.com",
+      "password": "$2a$10$Qjm1vSu5lZ1/h/mbRv6wNObD8BU8nQfc/oUv/GTeZVMM2i/jL6WTG",
+      "firstName": "gigel",
+      "lastName": "gigel",
+      "id": 3
     }
   ]
 }

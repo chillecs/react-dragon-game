@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useAuthContext } from "../AuthContext";
 import { toast } from "react-toastify";
-import { useParams } from "react-router";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 

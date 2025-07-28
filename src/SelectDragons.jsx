@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import { DragonModal } from "./DragonModal";
 import { useNavigate } from "react-router";
-import { ToastContainer, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 export function SelectDragons() {
   const dragons = [
@@ -103,7 +101,6 @@ export function SelectDragons() {
 
   function clearLocalStorage() {
     localStorage.removeItem("storedDragons");
-    console.log(localStorage.getItem("storedDragons"));
     setSelectedDragons([]);
     setInfoMessage("Select 2 Dragons to start the game!");
   }

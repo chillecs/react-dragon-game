@@ -12,7 +12,7 @@ import { ManageProfile } from "./manage-profile/ManageProfile.jsx";
 export function App() {
   return (
     <AuthContextProvider>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen overflow-hidden">
         <NavBar />
         <main className="flex-1 flex items-center justify-center">
           <AppRoutes />
