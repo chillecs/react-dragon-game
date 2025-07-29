@@ -35,6 +35,7 @@ export function Register() {
 
   const [errors, setErrors] = useState(null);
   const { user, login } = useAuthContext();
+  const [type, setType] = useState("password");
 
   useEffect(() => {
     if (user) {
@@ -101,6 +102,14 @@ export function Register() {
     toast.success("You have been logged in successfully!");
   }
 
+  function handleTogglePass() {
+    if (type === "password") {
+      setType("text");
+    } else {
+      setType("password");
+    }
+  }
+
   return (
     <form
       className="flex flex-col h-screen items-center justify-center"
@@ -112,7 +121,9 @@ export function Register() {
 
         <div className="flex gap-6">
           <div className="flex-1">
-            <label className="block text-center mb-2" htmlFor="firstName">First Name</label>
+            <label className="block text-center mb-2" htmlFor="firstName">
+              First Name
+            </label>
             <input
               className="w-full p-2 rounded-md border-2 border-gray-300"
               type="text"
@@ -127,7 +138,9 @@ export function Register() {
           </div>
 
           <div className="flex-1">
-            <label className="block text-center mb-2" htmlFor="lastName">Last Name</label>
+            <label className="block text-center mb-2" htmlFor="lastName">
+              Last Name
+            </label>
             <input
               className="w-full p-2 rounded-md border-2 border-gray-300"
               type="text"
@@ -136,7 +149,9 @@ export function Register() {
               value={formValues.lastName}
               onChange={handleInputChange}
             />
-            {errors?.lastName && <p className="inputError">{errors.lastName[0]}</p>}
+            {errors?.lastName && (
+              <p className="inputError">{errors.lastName[0]}</p>
+            )}
           </div>
         </div>
         <label htmlFor="email">Email</label>
@@ -153,7 +168,7 @@ export function Register() {
         <label htmlFor="password">Password</label>
         <input
           className="p-2 rounded-md border-2 border-gray-300"
-          type="password"
+          type={type}
           id="password"
           name="password"
           value={formValues.password}
@@ -164,12 +179,16 @@ export function Register() {
         <label htmlFor="retypePassword">Retype Password</label>
         <input
           className="p-2 rounded-md border-2 border-gray-300"
-          type="password"
+          type={type}
           id="retypePassword"
           name="retypePassword"
           value={formValues.retypePassword}
           onChange={handleInputChange}
         />
+        <div className="flex flex-row-reverse items-center justify-center gap-2 select-none">
+          <label htmlFor="showPass">Show Password</label>
+          <input type="checkbox" id="showPass" onClick={handleTogglePass} />
+        </div>
         {errors?.retypePassword && (
           <p className="inputError">{errors.retypePassword[0]}</p>
         )}
@@ -178,7 +197,10 @@ export function Register() {
           Register
         </button>
         <p>
-          Already have an account? <Link to="/login">Login</Link>
+          Already have an account?{" "}
+          <Link to="/login" className="hover:text-blue-500 transition">
+            Login
+          </Link>
         </p>
       </div>
     </form>

@@ -4,6 +4,9 @@ import { validateForm } from "./utils/formValidation.js";
 import { useAuthContext } from "./AuthContext.jsx";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import { Icon } from "react-icons-kit";
+import { eyeOff } from "react-icons-kit/feather/eyeOff";
+import { eye } from "react-icons-kit/feather/eye";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -24,6 +27,7 @@ export function Login() {
 
   const [errors, setErrors] = useState(null);
   const { user, login } = useAuthContext();
+  const [type, setType] = useState("password");
 
   useEffect(() => {
     if (user) {
@@ -33,7 +37,7 @@ export function Login() {
   }, [user, navigate]);
 
   function handleInputChange(e) {
-    const newFormValues = {...formValues, [e.target.name]: e.target.value};
+    const newFormValues = { ...formValues, [e.target.name]: e.target.value };
 
     if (errors) {
       const newErrors = validateForm(newFormValues, validationSchema);
@@ -79,6 +83,14 @@ export function Login() {
     toast.success("You have been logged in successfully!");
   }
 
+  function handleTogglePass() {
+    if (type === "password") {
+      setType("text");
+    } else {
+      setType("password");
+    }
+  }
+
   return (
     <form
       className="flex flex-col h-screen items-center justify-center"
@@ -102,19 +114,27 @@ export function Login() {
         <label htmlFor="password">Password</label>
         <input
           className="p-2 rounded-md border-2 border-gray-300"
-          type="password"
+          type={type}
           id="password"
           name="password"
           value={formValues.password}
           onChange={handleInputChange}
         />
+        <div className="flex flex-row-reverse items-center justify-center gap-2 select-none">
+          <label htmlFor="showPass">Show Password</label>
+          <input type="checkbox" id="showPass" onClick={handleTogglePass}/>
+        </div>
+
         {errors?.password && <p className="inputError">{errors.password[0]}</p>}
 
         <button type="submit" className="btn-primary">
           Login
         </button>
         <p>
-          Already have an account? <Link to="/register">Register</Link>
+          Already have an account?{" "}
+          <Link to="/register" className="hover:text-blue-500 transition">
+            Register
+          </Link>
         </p>
       </div>
     </form>
