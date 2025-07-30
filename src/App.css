@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .btn-primary {
-  @apply p-8 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400 cursor-pointer;
+  @apply p-8 px-6 py-2 text-lg font-semibold bg-gradient-to-r from-blue-700 to-blue-900 text-white rounded-2xl shadow-md hover:scale-105 hover:bg-blue-800 transition-all duration-150 focus:outline-none hover:ring-2 hover:ring-blue-400;
 }
 
 body {

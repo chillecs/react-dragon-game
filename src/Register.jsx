@@ -193,12 +193,12 @@ export function Register() {
           <p className="inputError">{errors.retypePassword[0]}</p>
         )}
 
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="btn-primary cursor-pointer">
           Register
         </button>
         <p>
           Already have an account?{" "}
-          <Link to="/login" className="hover:text-blue-500 transition">
+          <Link to="/login" className="hover:text-blue-500 transition cursor-pointer">
             Login
           </Link>
         </p>

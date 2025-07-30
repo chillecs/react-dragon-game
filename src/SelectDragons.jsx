@@ -10,70 +10,226 @@ export function SelectDragons() {
       src: "chaos.webp",
       weakness: "Sea",
       damage: 30,
-      health: 100,
+      health: 180,
+      abilities: [
+        {
+          name: "Chaos Storm",
+          description: "Deals 1.5x damage but has 30% chance to miss",
+          damageMultiplier: 1.5,
+          missChance: 0.3,
+        },
+        {
+          name: "Reality Warp",
+          description: "Reduces opponent's damage by 25% for next 2 turns",
+          effect: "reduceOpponentDamage",
+          value: 0.25,
+          duration: 2,
+        },
+      ],
     },
     {
       name: "Dark",
       src: "dark.webp",
       weakness: "Happy",
       damage: 20,
-      health: 100,
+      health: 200,
+      abilities: [
+        {
+          name: "Shadow Mark",
+          description:
+            "Deals 1.3x damage and has 35% chance to inflict Shadow Mark (takes 15% more damage for 2 turns)",
+          damageMultiplier: 1.3,
+          shadowMarkChance: 0.35,
+        },
+        {
+          name: "Void Shield",
+          description: "Absorbs 50% of incoming damage for 1 turn",
+          effect: "absorbDamage",
+          value: 0.5,
+          duration: 1,
+        },
+      ],
     },
     {
       name: "Electric",
       src: "electric.webp",
       weakness: "Soul",
       damage: 25,
-      health: 100,
+      health: 160,
+      abilities: [
+        {
+          name: "Lightning Bolt",
+          description: "Deals 1.4x damage and has 15% to attack again",
+          damageMultiplier: 1.4,
+          attackAgainChance: 0.15,
+        },
+        {
+          name: "Static Field",
+          description: "Reflects 15% of damage back to attacker for 1 turn",
+          effect: "reflectDamage",
+          value: 0.15,
+          duration: 1,
+        },
+      ],
     },
     {
       name: "Forest",
       src: "forest.webp",
       weakness: "Magic",
       damage: 22,
-      health: 100,
+      health: 185,
+      abilities: [
+        {
+          name: "Nature's Wrath",
+          description:
+            "Deals 1.2x damage and heals self for 15% of damage dealt",
+          damageMultiplier: 1.2,
+          healPercent: 0.15,
+        },
+        {
+          name: "Entangle",
+          description:
+            "Reduces opponent's damage by 20% and has 35% chance to attack again",
+          effect: "reduceOpponentDamage",
+          value: 0.2,
+          attackAgainChance: 0.35,
+        },
+      ],
     },
     {
       name: "Happy",
       src: "happy.webp",
       weakness: "Wind",
       damage: 21,
-      health: 100,
+      health: 190,
+      abilities: [
+        {
+          name: "Joy Burst",
+          description:
+            "Deals 1.3x damage and increases own damage by 15% for next turn",
+          damageMultiplier: 1.3,
+          selfDamageBoost: 0.15,
+          duration: 1,
+        },
+        {
+          name: "Positive Aura",
+          description:
+            "Heals self for 20% of max health and removes negative effects",
+          healPercent: 0.2,
+          effect: "removeNegativeEffects",
+        },
+      ],
     },
     {
       name: "Ice",
       src: "ice.webp",
       weakness: "Chaos",
       damage: 33,
-      health: 100,
+      health: 170,
+      abilities: [
+        {
+          name: "Frost Nova",
+          description: "Deals 1.4x damage and has 40% chance to freeze",
+          damageMultiplier: 1.4,
+          freezeChance: 0.4,
+        },
+        {
+          name: "Ice Armor",
+          description: "Reduces incoming damage by 40% for 2 turns",
+          effect: "reduceIncomingDamage",
+          value: 0.4,
+          duration: 2,
+        },
+      ],
     },
     {
       name: "Magic",
       src: "magic.webp",
       weakness: "Dark",
       damage: 22,
-      health: 100,
+      health: 165,
+      abilities: [
+        {
+          name: "Arcane Blast",
+          description: "Deals 1.5x damage and has 30% chance to silence",
+          damageMultiplier: 1.5,
+          silenceChance: 0.3,
+        },
+        {
+          name: "Mana Shield",
+          description: "Converts 60% of incoming damage to health for 1 turn",
+          effect: "convertDamageToHealth",
+          value: 0.6,
+          duration: 1,
+        },
+      ],
     },
     {
       name: "Sea",
       src: "sea.webp",
       weakness: "Ice",
       damage: 23,
-      health: 100,
+      health: 240,
+      abilities: [
+        {
+          name: "Tsunami Wave",
+          description: "Deals 1.3x damage and has 25% chance to knockback",
+          damageMultiplier: 1.3,
+          knockbackChance: 0.25,
+        },
+        {
+          name: "Ocean's Blessing",
+          description:
+            "Heals self for 25% of max health and increases damage by 20% for 2 turns",
+          healPercent: 0.25,
+          selfDamageBoost: 0.2,
+          duration: 2,
+        },
+      ],
     },
     {
       name: "Soul",
       src: "soul.webp",
       weakness: "Forest",
       damage: 24,
-      health: 100,
+      health: 230,
+      abilities: [
+        {
+          name: "Soul Drain",
+          description: "Deals 1.2x damage and steals 20% of opponent's health",
+          damageMultiplier: 1.2,
+          stealHealthPercent: 0.2,
+        },
+        {
+          name: "Spirit Link",
+          description: "Shares damage with opponent for 2 turns",
+          effect: "shareDamage",
+          duration: 2,
+        },
+      ],
     },
     {
       name: "Wind",
       src: "wind.webp",
       weakness: "Electric",
       damage: 25,
-      health: 100,
+      health: 215,
+      abilities: [
+        {
+          name: "Gale Force",
+          description:
+            "Deals 1.4x damage and has 35% chance to dodge next attack",
+          damageMultiplier: 1.4,
+          dodgeChance: 0.35,
+        },
+        {
+          name: "Wind Barrier",
+          description:
+            "Completely blocks next attack and reflects 50% of damage back",
+          effect: "blockNextAttack",
+          reflectPercent: 0.5,
+        },
+      ],
     },
   ];
 
@@ -82,7 +238,7 @@ export function SelectDragons() {
   const [selectedDragons, setSelectedDragons] = useState([]);
   const [infoMessage, setInfoMessage] = useState(
     "Select 2 Dragons to start the game!"
-);
+  );
 
   const navigate = useNavigate();
 

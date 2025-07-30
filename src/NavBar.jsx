@@ -8,10 +8,10 @@ export function NavBar() {
     <nav className="flex flex-row items-center justify-end gap-4 p-2 bg-[#03071200] mt-6 mr-6">
       {!user && (
         <>
-          <Link to="/register" className="btn-primary mr-4">
+          <Link to="/register" className="btn-primary mr-4 cursor-pointer">
             Register
           </Link>
-          <Link to="/login" className="btn-primary">
+          <Link to="/login" className="btn-primary cursor-pointer">
             Login
           </Link>
         </>
@@ -20,13 +20,13 @@ export function NavBar() {
         <>
           <div className="flex flex-row items-center justify-center gap-4">
             <p className="text-white">Welcome, {user.firstName}</p>
-            <button onClick={logout} className="btn-primary mr-4">
+            <button onClick={logout} className="btn-primary mr-4 cursor-pointer">
               Logout
             </button>
-            <Link to="/manage-profile" className="btn-primary mr-4">
+            <Link to="/manage-profile" className="btn-primary mr-4 cursor-pointer">
               Manage Profile
             </Link>
-            <Link to="/" className="btn-primary">
+            <Link to="/" className="btn-primary cursor-pointer">
               Home
             </Link>
           </div>

@@ -30,7 +30,7 @@ export function Login() {
   const [type, setType] = useState("password");
 
   useEffect(() => {
-    if (user) {
+    if (user) { 
       navigate("/");
       return;
     }
@@ -127,12 +127,12 @@ export function Login() {
 
         {errors?.password && <p className="inputError">{errors.password[0]}</p>}
 
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="btn-primary cursor-pointer">
           Login
         </button>
         <p>
           Already have an account?{" "}
-          <Link to="/register" className="hover:text-blue-500 transition">
+          <Link to="/register" className="hover:text-blue-500 transition cursor-pointer">
             Register
           </Link>
         </p>
