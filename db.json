@@ -8,8 +8,8 @@
       "id": 1
     },
     {
-      "email": "dev@dev.com",
-      "password": "$2a$10$.TyHPmG2vmfjMMEZtN1hdeMWjQq5iy8Jg5wa5Qxn2CjT7W.EEXkp6",
+      "email": "abc@abc.com",
+      "password": "$2a$10$wwPCGo.qWQs3gJpRtuqNieGWvm/Ec6N6c.t43CBj1dyt70k3WgpYS",
       "firstName": "Cristian",
       "lastName": "Dev",
       "id": 2

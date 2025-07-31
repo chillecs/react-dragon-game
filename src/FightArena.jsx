@@ -17,11 +17,20 @@ export function FightArena() {
   const [turn, setTurn] = useState(0);
   const [criticalDamageIndicator, setCriticalDamageIndicator] = useState(0);
 
+  function checkWeakness(attackingDragon, defendingDragon) {
+    // If the defending dragon's weakness matches the attacking dragon's name,
+    // the attacking dragon gets 20% more damage
+    if (defendingDragon.weakness === attackingDragon.name) {
+      return attackingDragon.damage * 1.2;
+    }
+    return attackingDragon.damage;
+  }
+
   function calculateCriticalDamage(dragon) {
     const criticalChance = Math.random() < 0.5;
     if (criticalChance) {
       const criticalDamage = dragon.damage * 1.15;
-      return criticalDamage.toFixed(0);
+      return Math.round(criticalDamage);
     }
     return dragon.damage;
   }
@@ -37,8 +46,13 @@ export function FightArena() {
     }
 
     if (buttonType === "attack-button1") {
-      const criticalDamage = calculateCriticalDamage(storedDragons[0]);
-      const isCritical = criticalDamage > storedDragons[0].damage;
+      // Dragon 0 attacks Dragon 1
+      const baseDamage = Math.round(checkWeakness(storedDragons[0], storedDragons[1]));
+      const criticalDamage = calculateCriticalDamage({
+        ...storedDragons[0],
+        damage: baseDamage,
+      });
+      const isCritical = criticalDamage > baseDamage;
       setCriticalDamageIndicator(isCritical ? criticalDamage : 0);
       setDragonsHealth((prevHealth) => {
         const newHealth = [...prevHealth];
@@ -47,8 +61,13 @@ export function FightArena() {
         return newHealth;
       });
     } else if (buttonType === "attack-button2") {
-      const criticalDamage = calculateCriticalDamage(storedDragons[1]);
-      const isCritical = criticalDamage > storedDragons[1].damage;
+      // Dragon 1 attacks Dragon 0
+      const baseDamage = Math.round(checkWeakness(storedDragons[1], storedDragons[0]));
+      const criticalDamage = calculateCriticalDamage({
+        ...storedDragons[1],
+        damage: baseDamage,
+      });
+      const isCritical = criticalDamage > baseDamage;
       setCriticalDamageIndicator(isCritical ? criticalDamage : 0);
       setDragonsHealth((prevHealth) => {
         const newHealth = [...prevHealth];
@@ -80,7 +99,7 @@ export function FightArena() {
               Health: {dragonsHealth[0]}
             </div>
             <div className="text-lg text-cyan-100 bg-cyan-900/40 px-4 py-2 rounded-xl shadow-inner font-semibold text-center min-w-[150px] min-h-[50px]">
-              Damage: {storedDragons[0].damage}
+              Damage: {Math.round(checkWeakness(storedDragons[0], storedDragons[1]))}
             </div>
           </div>
           {turn === 0 ? (
@@ -136,27 +155,26 @@ export function FightArena() {
             )}
           </div>
         )}
-        {dragonsHealth[0] === 0 ||
-          (dragonsHealth[1] === 0 && (
-            <div className="flex flex-col items-center justify-center mx-4">
-              <h1 className="text-4xl font-bold">
-                Winner{" "}
-                {dragonsHealth[0] === 0
-                  ? storedDragons[1].name
-                  : storedDragons[0].name}
-              </h1>
-              <Link to="/">
-                <button
-                  className="mt-2 px-8 py-3 text-xl font-bold bg-gradient-to-r from-green-600 to-green-800 text-white rounded-2xl shadow-lg hover:scale-105 hover:bg-green-800 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer border-2 border-green-400/40"
-                  onClick={() => {
-                    localStorage.removeItem("storedDragons");
-                  }}
-                >
-                  Play Again
-                </button>
-              </Link>
-            </div>
-          ))}
+        {(dragonsHealth[0] === 0 || dragonsHealth[1] === 0) && (
+          <div className="flex flex-col items-center justify-center mx-4">
+            <h1 className="text-4xl font-bold">
+              Winner{" "}
+              {dragonsHealth[0] === 0
+                ? storedDragons[1].name
+                : storedDragons[0].name}
+            </h1>
+            <Link to="/">
+              <button
+                className="mt-2 px-8 py-3 text-xl font-bold bg-gradient-to-r from-green-600 to-green-800 text-white rounded-2xl shadow-lg hover:scale-105 hover:bg-green-800 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-green-400 cursor-pointer border-2 border-green-400/40"
+                onClick={() => {
+                  localStorage.removeItem("storedDragons");
+                }}
+              >
+                Play Again
+              </button>
+            </Link>
+          </div>
+        )}
         {/* Right Dragon Card */}
         <div className="flex-1 flex flex-col items-center bg-[#101624] bg-opacity-90 rounded-3xl shadow-2xl border-4 border-pink-700/60 p-8 mx-2 min-w-[320px] max-w-md relative">
           <h2 className="text-3xl font-extrabold mb-4 text-pink-200 text-center drop-shadow">
@@ -172,7 +190,7 @@ export function FightArena() {
               Health: {dragonsHealth[1]}
             </div>
             <div className="text-lg text-pink-100 bg-pink-900/40 px-4 py-2 rounded-xl shadow-inner font-semibold text-center min-w-[150px] min-h-[50px]">
-              Damage: {storedDragons[1].damage}
+              Damage: {Math.round(checkWeakness(storedDragons[1], storedDragons[0]))}
             </div>
           </div>
           {turn === 1 ? (

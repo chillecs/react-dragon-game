@@ -94,19 +94,6 @@ export function DragonModal({
               <span className="font-semibold">Weakness:</span>
               {` ${clickedDragon.weakness}`}
             </div>
-            {/* Abilities Text */}
-            <div className="text-lg text-blue-100 bg-blue-900/40 px-4 py-2 w-full text-center rounded-xl shadow-inner mt-6">
-              <span className="font-semibold">Abilities:</span>
-              {clickedDragon.abilities.map((ability) => (
-                <div
-                  className="border-2 m-2 p-2 rounded-xl shadow-inner"
-                  key={ability.name}
-                >
-                  <span className="font-semibold">{ability.name}: </span>
-                  {ability.description}
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       )}
