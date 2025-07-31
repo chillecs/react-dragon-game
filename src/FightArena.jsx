@@ -18,10 +18,10 @@ export function FightArena() {
   const [criticalDamageIndicator, setCriticalDamageIndicator] = useState(0);
 
   function checkWeakness(attackingDragon, defendingDragon) {
-    // If the defending dragon's weakness matches the attacking dragon's name,
-    // the attacking dragon gets 20% more damage
     if (defendingDragon.weakness === attackingDragon.name) {
       return attackingDragon.damage * 1.2;
+    } else if (attackingDragon.weakness === defendingDragon.name) {
+      return defendingDragon.damage * 1.2;
     }
     return attackingDragon.damage;
   }
@@ -29,7 +29,7 @@ export function FightArena() {
   function calculateCriticalDamage(dragon) {
     const criticalChance = Math.random() < 0.5;
     if (criticalChance) {
-      const criticalDamage = dragon.damage * 1.15;
+      const criticalDamage = dragon.damage * 1.2;
       return Math.round(criticalDamage);
     }
     return dragon.damage;

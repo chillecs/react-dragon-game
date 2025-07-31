@@ -33,11 +33,11 @@ export function DeleteProfile() {
           },
         });
         if (!response.ok) {
-          throw new Error("Failed to change password");
+          throw new Error("Failed to delete account");
         }
         logout();
       } catch (error) {
-        alert("Error changing password. Please try again.");
+        alert("Error deleting account. Please try again.");
       }
     }
   }

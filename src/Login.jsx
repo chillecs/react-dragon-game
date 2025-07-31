@@ -4,9 +4,6 @@ import { validateForm } from "./utils/formValidation.js";
 import { useAuthContext } from "./AuthContext.jsx";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
-import { Icon } from "react-icons-kit";
-import { eyeOff } from "react-icons-kit/feather/eyeOff";
-import { eye } from "react-icons-kit/feather/eye";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
