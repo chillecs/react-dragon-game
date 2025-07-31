@@ -20,8 +20,6 @@ export function FightArena() {
   function checkWeakness(attackingDragon, defendingDragon) {
     if (defendingDragon.weakness === attackingDragon.name) {
       return attackingDragon.damage * 1.2;
-    } else if (attackingDragon.weakness === defendingDragon.name) {
-      return defendingDragon.damage * 1.2;
     }
     return attackingDragon.damage;
   }

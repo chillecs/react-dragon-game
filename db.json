@@ -13,6 +13,13 @@
       "firstName": "Cristian",
       "lastName": "Dev",
       "id": 2
+    },
+    {
+      "email": "dev@dev.com",
+      "password": "$2a$10$sLfwz3DWNOh1tw.QrkncLuwlAbmIcExoyalUN8LmkQyln6o30yPt.",
+      "firstName": "Cristian",
+      "lastName": "Dev",
+      "id": 3
     }
   ]
 }
